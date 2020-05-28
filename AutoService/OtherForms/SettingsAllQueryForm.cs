@@ -40,7 +40,8 @@ namespace AutoService.OtherForms
 		    .GroupBy(p => new
 		    {
 			clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-			car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " " + p.query.query.client.Cars.color.Trim(),
+			car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
+
 			bday = p.query.query.client.Birthday,
 			clientphone = p.query.query.client.Phone.Trim(),
 			masterID = p.master.ID,

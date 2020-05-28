@@ -63,6 +63,12 @@
             this.dtgAllCars = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
             this.FileDilogPicture = new System.Windows.Forms.OpenFileDialog();
+            this.label12 = new System.Windows.Forms.Label();
+            this.txtCOLOR = new System.Windows.Forms.TextBox();
+            this.txtEnNumber = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtPTS = new System.Windows.Forms.TextBox();
             this.groupNewCar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBox)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -74,6 +80,12 @@
             // 
             // groupNewCar
             // 
+            this.groupNewCar.Controls.Add(this.txtPTS);
+            this.groupNewCar.Controls.Add(this.label14);
+            this.groupNewCar.Controls.Add(this.label13);
+            this.groupNewCar.Controls.Add(this.txtEnNumber);
+            this.groupNewCar.Controls.Add(this.label12);
+            this.groupNewCar.Controls.Add(this.txtCOLOR);
             this.groupNewCar.Controls.Add(this.cmbmodel);
             this.groupNewCar.Controls.Add(this.label1);
             this.groupNewCar.Controls.Add(this.txtGRS);
@@ -81,7 +93,7 @@
             this.groupNewCar.Controls.Add(this.btnExistClient);
             this.groupNewCar.Location = new System.Drawing.Point(356, 435);
             this.groupNewCar.Name = "groupNewCar";
-            this.groupNewCar.Size = new System.Drawing.Size(208, 109);
+            this.groupNewCar.Size = new System.Drawing.Size(269, 185);
             this.groupNewCar.TabIndex = 28;
             this.groupNewCar.TabStop = false;
             // 
@@ -93,7 +105,7 @@
             this.cmbmodel.IntegralHeight = false;
             this.cmbmodel.Location = new System.Drawing.Point(58, 24);
             this.cmbmodel.Name = "cmbmodel";
-            this.cmbmodel.Size = new System.Drawing.Size(133, 21);
+            this.cmbmodel.Size = new System.Drawing.Size(202, 21);
             this.cmbmodel.TabIndex = 107;
             this.cmbmodel.SelectedIndexChanged += new System.EventHandler(this.cmbmodel_SelectedIndexChanged);
             // 
@@ -111,7 +123,7 @@
             this.txtGRS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtGRS.Location = new System.Drawing.Point(58, 50);
             this.txtGRS.Name = "txtGRS";
-            this.txtGRS.Size = new System.Drawing.Size(133, 20);
+            this.txtGRS.Size = new System.Drawing.Size(202, 20);
             this.txtGRS.TabIndex = 1;
             // 
             // label2
@@ -125,9 +137,9 @@
             // 
             // btnExistClient
             // 
-            this.btnExistClient.Location = new System.Drawing.Point(12, 76);
+            this.btnExistClient.Location = new System.Drawing.Point(6, 156);
             this.btnExistClient.Name = "btnExistClient";
-            this.btnExistClient.Size = new System.Drawing.Size(179, 23);
+            this.btnExistClient.Size = new System.Drawing.Size(254, 23);
             this.btnExistClient.TabIndex = 8;
             this.btnExistClient.Text = "Добавить";
             this.btnExistClient.UseVisualStyleBackColor = true;
@@ -135,9 +147,9 @@
             // 
             // btnaddOldCar
             // 
-            this.btnaddOldCar.Location = new System.Drawing.Point(368, 550);
+            this.btnaddOldCar.Location = new System.Drawing.Point(362, 626);
             this.btnaddOldCar.Name = "btnaddOldCar";
-            this.btnaddOldCar.Size = new System.Drawing.Size(179, 23);
+            this.btnaddOldCar.Size = new System.Drawing.Size(254, 23);
             this.btnaddOldCar.TabIndex = 30;
             this.btnaddOldCar.Text = "Добавить существующий";
             this.btnaddOldCar.UseVisualStyleBackColor = true;
@@ -155,7 +167,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(317, 133);
+            this.txtPhone.Location = new System.Drawing.Point(394, 135);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(198, 20);
             this.txtPhone.TabIndex = 104;
@@ -192,7 +204,7 @@
             // 
             // dtpDateBirthday
             // 
-            this.dtpDateBirthday.Location = new System.Drawing.Point(317, 107);
+            this.dtpDateBirthday.Location = new System.Drawing.Point(394, 109);
             this.dtpDateBirthday.Name = "dtpDateBirthday";
             this.dtpDateBirthday.Size = new System.Drawing.Size(198, 20);
             this.dtpDateBirthday.TabIndex = 103;
@@ -202,7 +214,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(256, 136);
+            this.label5.Location = new System.Drawing.Point(333, 138);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 36;
@@ -211,7 +223,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(222, 110);
+            this.label4.Location = new System.Drawing.Point(299, 112);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 35;
@@ -220,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(254, 84);
+            this.label6.Location = new System.Drawing.Point(331, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 34;
@@ -229,7 +241,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(252, 32);
+            this.label7.Location = new System.Drawing.Point(329, 34);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 33;
@@ -238,7 +250,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(279, 58);
+            this.label8.Location = new System.Drawing.Point(356, 60);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 32;
@@ -246,7 +258,7 @@
             // 
             // txtPatron
             // 
-            this.txtPatron.Location = new System.Drawing.Point(317, 81);
+            this.txtPatron.Location = new System.Drawing.Point(394, 83);
             this.txtPatron.Name = "txtPatron";
             this.txtPatron.Size = new System.Drawing.Size(198, 20);
             this.txtPatron.TabIndex = 102;
@@ -255,7 +267,7 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(317, 29);
+            this.txtSurname.Location = new System.Drawing.Point(394, 31);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(198, 20);
             this.txtSurname.TabIndex = 100;
@@ -264,7 +276,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(317, 55);
+            this.txtName.Location = new System.Drawing.Point(394, 57);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 101;
@@ -278,7 +290,7 @@
             this.закрытьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(578, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(647, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -310,9 +322,9 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tlsInfoCountCar});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 587);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 665);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(578, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(647, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 45;
             this.statusStrip1.Text = "statusStrip1";
@@ -331,7 +343,7 @@
             this.dtgCars.MultiSelect = false;
             this.dtgCars.Name = "dtgCars";
             this.dtgCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCars.Size = new System.Drawing.Size(306, 131);
+            this.dtgCars.Size = new System.Drawing.Size(383, 131);
             this.dtgCars.TabIndex = 46;
             // 
             // groupBox1
@@ -354,7 +366,7 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(24, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(540, 358);
+            this.groupBox1.Size = new System.Drawing.Size(601, 358);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             // 
@@ -404,11 +416,62 @@
             // 
             this.FileDilogPicture.FileName = "openFileDialog1";
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(22, 79);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(35, 13);
+            this.label12.TabIndex = 109;
+            this.label12.Text = "Цвет:";
+            // 
+            // txtCOLOR
+            // 
+            this.txtCOLOR.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtCOLOR.Location = new System.Drawing.Point(58, 76);
+            this.txtCOLOR.Name = "txtCOLOR";
+            this.txtCOLOR.Size = new System.Drawing.Size(202, 20);
+            this.txtCOLOR.TabIndex = 108;
+            // 
+            // txtEnNumber
+            // 
+            this.txtEnNumber.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEnNumber.Location = new System.Drawing.Point(127, 102);
+            this.txtEnNumber.Name = "txtEnNumber";
+            this.txtEnNumber.Size = new System.Drawing.Size(133, 20);
+            this.txtEnNumber.TabIndex = 110;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(22, 105);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(99, 13);
+            this.label13.TabIndex = 111;
+            this.label13.Text = "Номер двигателя:";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(22, 130);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(32, 13);
+            this.label14.TabIndex = 112;
+            this.label14.Text = "ПТС:";
+            // 
+            // txtPTS
+            // 
+            this.txtPTS.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPTS.Location = new System.Drawing.Point(58, 128);
+            this.txtPTS.Name = "txtPTS";
+            this.txtPTS.Size = new System.Drawing.Size(202, 20);
+            this.txtPTS.TabIndex = 113;
+            // 
             // SettingsClient_Auto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 609);
+            this.ClientSize = new System.Drawing.Size(647, 687);
             this.Controls.Add(this.btnaddOldCar);
             this.Controls.Add(this.dtgAllCars);
             this.Controls.Add(this.label11);
@@ -478,5 +541,11 @@
 	private System.Windows.Forms.DataGridView dtgAllCars;
 	private System.Windows.Forms.Label label11;
 	private System.Windows.Forms.OpenFileDialog FileDilogPicture;
+        private System.Windows.Forms.TextBox txtPTS;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtEnNumber;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtCOLOR;
     }
 }

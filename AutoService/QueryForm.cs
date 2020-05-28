@@ -38,7 +38,7 @@ namespace AutoService
             dtgQuery.Columns[6].HeaderText = "Выпущено";
 
             dtgQuery.Columns[0].Width = 175;
-            dtgQuery.Columns[1].Width = 500;
+            dtgQuery.Columns[1].Width = 560;
             dtgQuery.Columns[2].Width = 90;
             dtgQuery.Columns[4].Width = 175;
             dtgQuery.Columns[5].Width = 90;
@@ -73,7 +73,7 @@ namespace AutoService
                     {
                         clientID = p.query.query.client.ID,
                         clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-                        car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " " + p.query.query.client.Cars.color.Trim(),
+                        car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
                         bday = p.query.query.client.Birthday,
                         clientphone = p.query.query.client.Phone.Trim(),
                         masterID = p.master.ID,
@@ -294,7 +294,7 @@ namespace AutoService
                 var result = General.context.Clients
                 .Join(General.context.Cars, client => client.CarID, car => car.ID, (client, car) => new { client, car }).Where(z => z.car.ID == z.client.CarID)
                 .Where(x => x.client.SurName.Trim() + " " + x.client.Name.Trim() + " " + x.client.Patronymic.Trim() == str.Trim() && x.client.Birthday == dt)
-                .Select(t => new { t.car.ID, name = t.car.ModelCars.NameCar.Trim() + " " + t.car.RegisterSign.Trim() + " " + t.car.color.Trim() })
+                .Select(t => new { t.car.ID, name = t.car.ModelCars.NameCar.Trim() + " " + t.car.RegisterSign.Trim() + " | Цвет: " + t.car.color.Trim() + " | Номер двигателя: " + t.car.EnNumber.Trim() + " | Номер тех паспорта: " + t.car.pts.Trim() })
                 .ToList();
                 if (result.Count > 0)
                 {
@@ -356,6 +356,8 @@ namespace AutoService
                 cmdmasterNew.Items.Clear();
                 txtGRSNew.Text = "";
                 txtCOLORNew.Text = "";
+                txtEnNumberNew.Text = "";
+                txtPTSNew.Text = "";
                 txtPhoneNew.Enabled = false;
                 txtPhoneNew.Text = "";
             }
@@ -400,7 +402,7 @@ namespace AutoService
                         {
                             clientID = p.query.query.client.ID,
                             clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-                            car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " " + p.query.query.client.Cars.color.Trim(),
+                            car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
                             bday = p.query.query.client.Birthday,
                             clientphone = p.query.query.client.Phone.Trim(),
                             masterID = p.master.ID,
@@ -465,7 +467,7 @@ namespace AutoService
             string clientfio = txtFioExist.Text.Trim();
             int carID = Convert.ToInt32(cmbCarsExist.SelectedValue);
             string carinfo = General.context.Cars
-            .Where(x => x.ID == carID).Select(x => new { name = x.ModelCars.NameCar.Trim() + " " + x.RegisterSign.Trim() + " " + x.color.Trim() }).Select(x => x.name).First().ToString().Trim();
+            .Where(x => x.ID == carID).Select(x => new { name = x.ModelCars.NameCar.Trim() + " " + x.RegisterSign.Trim() + " | Цвет: " + x.color.Trim() + " | Номер двигателя: " + x.EnNumber.Trim() + " | Номер тех паспорта: " + x.pts.Trim() }).Select(x => x.name).First().ToString().Trim();
             int masterID = Convert.ToInt32(cmdmasterExist.SelectedValue);
             string masterfio = General.context.Masters
             .Where(x => x.ID == masterID).Select(x => new { name = x.SurName.Trim() + " " + x.Name.Trim() + " " + x.Patronymic.Trim() }).Select(x => x.name).First().ToString().Trim();
@@ -531,7 +533,7 @@ namespace AutoService
                     var query = General.context.QueryAutoService.Where(
                     x =>
                       ((x.Clients.SurName.Trim() + " " + x.Clients.Name.Trim() + " " + x.Clients.Patronymic.Trim()).Trim() == clientFIO) &&
-                      ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " " + x.Clients.Cars.color.Trim()) == carInfo) &&
+                      ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " | Цвет: " + x.Clients.Cars.color.Trim() + " | Номер двигателя: " + x.Clients.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + x.Clients.Cars.pts.Trim()) == carInfo) &&
                       (x.MasterID == masterID) &&
                       (x.DateVisit == dateVisit) &&
                       (x.DateReady == dateforReady) &&
@@ -615,9 +617,9 @@ namespace AutoService
                         #region Car
                         int modelcarID = Convert.ToInt32(cmbCarsNew.SelectedValue);
                         var cars = General.context.Cars
-                            .Where(x => x.ModelCarID == modelcarID && x.RegisterSign.Trim() == txtGRSNew.Text.Trim() && x.color.Trim() == txtCOLORNew.Text.Trim())
+                            .Where(x => x.ModelCarID == modelcarID && x.RegisterSign.Trim() == txtGRSNew.Text.Trim() && x.color.Trim() == txtCOLORNew.Text.Trim() && x.EnNumber.Trim() == txtEnNumberNew.Text.Trim() && x.pts.Trim() == txtPTSNew.Text.Trim())
                             .ToList();
-                        Cars car = new Cars() { ModelCarID = modelcarID, RegisterSign = txtGRSNew.Text.Trim(), color = txtCOLORNew.Text.Trim() };
+                        Cars car = new Cars() { ModelCarID = modelcarID, RegisterSign = txtGRSNew.Text.Trim(), color = txtCOLORNew.Text.Trim(),EnNumber = txtEnNumberNew.Text.Trim(),pts = txtPTSNew.Text.Trim()};
                         if (cars.Count == 0)
                         {
                             try
@@ -625,7 +627,7 @@ namespace AutoService
                                 General.context.Cars.Add(car);
                                 General.context.SaveChanges();
                                 carID = car.ID;
-                                carinfo = General.context.ModelCars.Where(z => z.ID == modelcarID).Select(x => x.NameCar).First().ToString().Trim() + " " + car.RegisterSign.Trim() + " " + car.color.Trim();
+                                carinfo = General.context.ModelCars.Where(z => z.ID == modelcarID).Select(x => x.NameCar).First().ToString().Trim() + " " + car.RegisterSign.Trim() + " | Цвет: " + car.color.Trim() + " | Номер двигателя: " + car.EnNumber.Trim() + " | Номер тех паспорта: " + car.pts.Trim();
                                 is_car = true;
                             }
                             catch (Exception)
@@ -637,7 +639,7 @@ namespace AutoService
                         else
                         {
                             carID = cars.Select(x => x.ID).First();
-                            carinfo = General.context.ModelCars.Where(z => z.ID == modelcarID).Select(x => x.NameCar).First().ToString().Trim() + " " + car.RegisterSign.Trim() + " " + car.color.Trim();
+                            carinfo = General.context.ModelCars.Where(z => z.ID == modelcarID).Select(x => x.NameCar).First().ToString().Trim() + " " + car.RegisterSign.Trim() + " | Цвет: " + car.color.Trim() + " | Номер двигателя: " + car.EnNumber.Trim() + " | Номер тех паспорта: " + car.pts.Trim();
                             is_car = true;
                         }
                         #endregion Car
@@ -727,6 +729,8 @@ namespace AutoService
             {
                 txtGRSNew.Enabled = true;
                 txtCOLORNew.Enabled = true;
+                txtEnNumberNew.Enabled = true;
+                txtPTSNew.Enabled = true;
                 cmdmasterNew.DataSource = General.context.Masters
                 .Select(x => new { x.ID, fio = x.SurName.Trim() + " " + x.Name.Trim() + " " + x.Patronymic.Trim() })
                 .OrderBy(t => t.fio)
@@ -739,6 +743,8 @@ namespace AutoService
             {
                 txtGRSNew.Enabled = false;
                 txtCOLORNew.Enabled = false;
+                txtEnNumberNew.Enabled = false;
+                txtPTSNew.Enabled = false;
                 cmdmasterNew.DataSource = null;
             }
             cmdmasterNew.Enabled = false;
@@ -829,7 +835,7 @@ namespace AutoService
                         var query = General.context.QueryAutoService.Where(
                             x =>
                               ((x.Clients.SurName.Trim() + " " + x.Clients.Name.Trim() + " " + x.Clients.Patronymic.Trim()).Trim() == clientFIO) &&
-                              ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " " + x.Clients.Cars.color.Trim()) == carInfo) &&
+                              ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " | Цвет: " + x.Clients.Cars.color.Trim() + " | Номер двигателя: " + x.Clients.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + x.Clients.Cars.pts.Trim()) == carInfo) &&
                               (x.MasterID == masterID) &&
                               (x.DateVisit == dateVisit) &&
                               (x.DateReady == null) &&
