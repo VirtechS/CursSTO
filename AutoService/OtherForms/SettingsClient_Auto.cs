@@ -47,6 +47,9 @@ namespace AutoService.OtherForms
         {
             this.FormClosing += new FormClosingEventHandler(Inicio_FormClosing_1);
             txtGRS.Enabled = false;
+            txtCOLOR.Enabled = false;
+            txtEnNumber.Enabled = false;
+            txtPTS.Enabled = false;
             dtpDateBirthday.MaxDate = new DateTime(DateTime.Now.Year - 18, 12, 31);
             btnSettings.Text = ClientAutoSettings.TextBtn;
             ClientAutoSettings.is_click = false;
@@ -97,7 +100,10 @@ namespace AutoService.OtherForms
             {
                 id = x.ID,
                 model = x.ModelCars.NameCar.Trim(),
-                grs = x.RegisterSign.Trim()
+                grs = x.RegisterSign.Trim(),
+                color = x.color.Trim(),
+                ennum = x.EnNumber.Trim(),
+                pts = x.pts.Trim()
             })
             .OrderBy(order => order.model)
             .ToList();
@@ -107,6 +113,13 @@ namespace AutoService.OtherForms
             dtgAllCars.Columns[2].HeaderText = "ГРЗ";
             dtgAllCars.Columns[2].Width = 120;
             dtgAllCars.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgAllCars.Columns[3].HeaderText = "Цвет";
+            dtgAllCars.Columns[3].Width = 100;
+            dtgAllCars.Columns[4].HeaderText = "Номер двигателя";
+            dtgAllCars.Columns[4].Width = 100;
+            dtgAllCars.Columns[5].HeaderText = "Номер тех паспорта";
+            dtgAllCars.Columns[5].Width = 100;
+
         }
 
         private void RefReshDataGrid()
@@ -131,6 +144,10 @@ namespace AutoService.OtherForms
                 t.car.car.ID,
                 Марка = t.model.NameCar.Trim(),
                 ГРЗ = t.car.car.RegisterSign.Trim(),
+                Цвет = t.car.car.color.Trim(),
+                НомерДвигателя = t.car.car.EnNumber.Trim(),
+                НомерТехПаспорта = t.car.car.pts.Trim(),
+
             }
          ).OrderBy(order => order.Марка).ToList();
             dtgCars.DataSource = result;
@@ -141,6 +158,12 @@ namespace AutoService.OtherForms
             dtgCars.Columns[2].HeaderText = "ГРЗ";
             dtgCars.Columns[2].Width = 120;
             dtgCars.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dtgCars.Columns[3].HeaderText = "Цвет";
+            dtgCars.Columns[3].Width = 100;
+            dtgCars.Columns[4].HeaderText = "Номер двигателя";
+            dtgCars.Columns[4].Width = 100;
+            dtgCars.Columns[5].HeaderText = "Номер тех паспорта";
+            dtgCars.Columns[5].Width = 100;
 
         }
 
@@ -272,6 +295,9 @@ namespace AutoService.OtherForms
         private void cmbmodel_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtGRS.Enabled = true;
+            txtCOLOR.Enabled = true;
+            txtEnNumber.Enabled = true;
+            txtPTS.Enabled = true;
         }
 
         private void btnExistClient_Click(object sender, EventArgs e)
@@ -291,6 +317,9 @@ namespace AutoService.OtherForms
                         {
                             car.ModelCarID = Convert.ToInt32(General.context.ModelCars.Where(x => x.NameCar == model).Select(x => x.ID).FirstOrDefault());
                             car.RegisterSign = txtGRS.Text.Trim();
+                            car.color = txtCOLOR.Text.Trim();
+                            car.EnNumber = txtEnNumber.Text.Trim();
+                            car.pts = txtPTS.Text.Trim();
                             General.context.Cars.Add(car);
                             General.context.SaveChanges();
                             newindex = car.ID;
@@ -303,6 +332,9 @@ namespace AutoService.OtherForms
                             RefReshDataGrid();
                             RefreshDataGridAllCars();
                             txtGRS.Text = "";
+                            txtCOLOR.Text = "";
+                            txtEnNumber.Text = "";
+                            txtPTS.Text = "";
                             cmbmodel.SelectedItem = null;
                             is_correct = true;
                         }
@@ -324,6 +356,9 @@ namespace AutoService.OtherForms
                         {
                             car.ModelCarID = Convert.ToInt32(General.context.ModelCars.Where(x => x.NameCar == model).Select(x => x.ID).FirstOrDefault());
                             car.RegisterSign = txtGRS.Text.Trim();
+                            car.color = txtCOLOR.Text.Trim();
+                            car.EnNumber = txtEnNumber.Text.Trim();
+                            car.pts = txtPTS.Text.Trim();
                             try
                             {
                                 General.context.Cars.Add(car);
@@ -377,6 +412,12 @@ namespace AutoService.OtherForms
                         cmbmodel.SelectedItem = null;
                         txtGRS.Text = "";
                         txtGRS.Enabled = false;
+                        txtCOLOR.Text = "";
+                        txtCOLOR.Enabled = false;
+                        txtEnNumber.Text = "";
+                        txtEnNumber.Enabled = false;
+                        txtPTS.Text = "";
+                        txtPTS.Enabled = false;
                     }
                 }
             }

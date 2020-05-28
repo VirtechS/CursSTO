@@ -32,7 +32,7 @@ namespace AutoService.Forms
                     {
                         clientID = p.query.query.client.ID,
                         clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-                        car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim(),
+                        car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
                         bday = p.query.query.client.Birthday,
                         clientphone = p.query.query.client.Phone.Trim(),
                         masterID = p.master.ID,
@@ -99,7 +99,7 @@ namespace AutoService.Forms
             dtgQuery.Columns[6].HeaderText = "Выпущено";
 
             dtgQuery.Columns[0].Width = 175;
-            dtgQuery.Columns[1].Width = 160;
+            dtgQuery.Columns[1].Width = 560;
             dtgQuery.Columns[2].Width = 90;
             dtgQuery.Columns[4].Width = 175;
             dtgQuery.Columns[5].Width = 90;
@@ -173,7 +173,7 @@ namespace AutoService.Forms
                         {
                             clientID = p.query.query.client.ID,
                             clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-                            car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim(),
+                            car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
                             bday = p.query.query.client.Birthday,
                             clientphone = p.query.query.client.Phone.Trim(),
                             masterID = p.master.ID,
@@ -268,7 +268,7 @@ namespace AutoService.Forms
                         var query = General.context.QueryAutoService.Where(
                             x =>
                               ((x.Clients.SurName.Trim() + " " + x.Clients.Name.Trim() + " " + x.Clients.Patronymic.Trim()).Trim() == clientFIO) &&
-                              ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim()) == carInfo) &&
+                              ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " | Цвет: " + x.Clients.Cars.color.Trim() + " | Номер двигателя: " + x.Clients.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + x.Clients.Cars.pts.Trim()) == carInfo) &&
                               (x.MasterID == masterID) &&
                               (x.DateVisit == dateVisit) &&
                               (x.DateReady == null) &&
@@ -321,7 +321,7 @@ namespace AutoService.Forms
                     var query = General.context.QueryAutoService.Where(
                     x =>
                       ((x.Clients.SurName.Trim() + " " + x.Clients.Name.Trim() + " " + x.Clients.Patronymic.Trim()).Trim() == clientFIO) &&
-                      ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim()) == carInfo) &&
+                      ((x.Clients.Cars.ModelCars.NameCar.Trim() + " " + x.Clients.Cars.RegisterSign.Trim() + " | Цвет: " + x.Clients.Cars.color.Trim() + " | Номер двигателя: " + x.Clients.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + x.Clients.Cars.pts.Trim()) == carInfo) &&
                       (x.MasterID == masterID) &&
                       (x.DateVisit == dateVisit) &&
                       (x.DateReady == dateforReady) &&
@@ -407,7 +407,7 @@ namespace AutoService.Forms
                 var result = General.context.Clients
                 .Join(General.context.Cars, client => client.CarID, car => car.ID, (client, car) => new { client, car }).Where(z => z.car.ID == z.client.CarID)
                 .Where(x => x.client.SurName.Trim() + " " + x.client.Name.Trim() + " " + x.client.Patronymic.Trim() == str.Trim())
-                .Select(t => t.car.ModelCars.NameCar.Trim() + " " + t.car.RegisterSign.Trim())
+                .Select(t => t.car.ModelCars.NameCar.Trim() + " " + t.car.RegisterSign.Trim() + " | Цвет: " + t.car.color.Trim() + " | Номер двигателя: " + t.car.EnNumber.Trim() + " | Номер тех паспорта: " + t.car.pts.Trim())
                 .ToList();
                 if (result.Count > 0)
                 {
@@ -440,7 +440,7 @@ namespace AutoService.Forms
                 cmdmaster.Text = "";
                 var result = General.context.QueryAutoService
                     .Where(t => (t.Clients.SurName.Trim() + " " + t.Clients.Name.Trim() + " " + t.Clients.Patronymic.Trim()) == str &&
-                   (t.Clients.Cars.ModelCars.NameCar.Trim() + " " + t.Clients.Cars.RegisterSign.Trim()) == car)
+                   (t.Clients.Cars.ModelCars.NameCar.Trim() + " " + t.Clients.Cars.RegisterSign.Trim() + " | Цвет: " + t.Clients.Cars.color.Trim() + " | Номер двигателя: " + t.Clients.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + t.Clients.Cars.pts.Trim()) == car)
                    .Select(x => new
                    {
                        masterFIO = x.Masters.SurName.Trim() + " " + x.Masters.Name.Trim() + " " + x.Masters.Patronymic.Trim()
@@ -515,7 +515,7 @@ namespace AutoService.Forms
             {
                 clientID = p.query.query.client.ID,
                 clientFIO = p.query.query.client.SurName.Trim() + " " + p.query.query.client.Name.Trim() + " " + p.query.query.client.Patronymic.Trim(),
-                car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim(),
+                car = p.query.query.client.Cars.ModelCars.NameCar.Trim() + " " + p.query.query.client.Cars.RegisterSign.Trim() + " | Цвет: " + p.query.query.client.Cars.color.Trim() + " | Номер двигателя: " + p.query.query.client.Cars.EnNumber.Trim() + " | Номер тех паспорта: " + p.query.query.client.Cars.pts.Trim(),
                 bday = p.query.query.client.Birthday,
                 clientphone = p.query.query.client.Phone.Trim(),
                 masterID = p.master.ID,

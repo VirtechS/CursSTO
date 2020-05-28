@@ -60,6 +60,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabCont = new System.Windows.Forms.TabControl();
             this.NEW = new System.Windows.Forms.TabPage();
+            this.txtNumVuNew = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.txtAddressNew = new System.Windows.Forms.TextBox();
+            this.label18 = new System.Windows.Forms.Label();
+            this.txtPTSNew = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.txtEnNumberNew = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtCOLORNew = new System.Windows.Forms.TextBox();
             this.txtPhoneNew = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtGRSNew = new System.Windows.Forms.TextBox();
@@ -87,16 +97,6 @@
             this.tlsInfoCountCar = new System.Windows.Forms.ToolStripStatusLabel();
             this.dtgQuery = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.txtCOLORNew = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtEnNumberNew = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
-            this.txtPTSNew = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
-            this.txtAddressNew = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
-            this.txtNumVuNew = new System.Windows.Forms.TextBox();
             this.menuStrip1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -262,7 +262,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(1095, 370);
+            this.label10.Location = new System.Drawing.Point(1603, 354);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(149, 16);
             this.label10.TabIndex = 40;
@@ -275,14 +275,14 @@
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Location = new System.Drawing.Point(450, 383);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(347, 208);
+            this.groupBox3.Size = new System.Drawing.Size(1144, 395);
             this.groupBox3.TabIndex = 42;
             this.groupBox3.TabStop = false;
             // 
             // txtPrice
             // 
             this.txtPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.txtPrice.Location = new System.Drawing.Point(175, 172);
+            this.txtPrice.Location = new System.Drawing.Point(62, 354);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(159, 22);
@@ -296,7 +296,7 @@
             this.dtgListService.Name = "dtgListService";
             this.dtgListService.ReadOnly = true;
             this.dtgListService.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgListService.Size = new System.Drawing.Size(328, 150);
+            this.dtgListService.Size = new System.Drawing.Size(1132, 338);
             this.dtgListService.TabIndex = 30;
             this.dtgListService.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtgListService_CellDoubleClick);
             // 
@@ -304,7 +304,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(124, 173);
+            this.label9.Location = new System.Drawing.Point(11, 355);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(47, 16);
             this.label9.TabIndex = 25;
@@ -315,17 +315,17 @@
             this.groupBox2.Controls.Add(this.btnSettingsQuery);
             this.groupBox2.Controls.Add(this.btndelquery);
             this.groupBox2.Controls.Add(this.btnSetDone);
-            this.groupBox2.Location = new System.Drawing.Point(1096, 383);
+            this.groupBox2.Location = new System.Drawing.Point(1600, 373);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(165, 208);
+            this.groupBox2.Size = new System.Drawing.Size(222, 208);
             this.groupBox2.TabIndex = 41;
             this.groupBox2.TabStop = false;
             // 
             // btnSettingsQuery
             // 
-            this.btnSettingsQuery.Location = new System.Drawing.Point(35, 81);
+            this.btnSettingsQuery.Location = new System.Drawing.Point(6, 82);
             this.btnSettingsQuery.Name = "btnSettingsQuery";
-            this.btnSettingsQuery.Size = new System.Drawing.Size(100, 50);
+            this.btnSettingsQuery.Size = new System.Drawing.Size(205, 50);
             this.btnSettingsQuery.TabIndex = 27;
             this.btnSettingsQuery.Text = "Редактировать";
             this.btnSettingsQuery.UseVisualStyleBackColor = true;
@@ -333,9 +333,9 @@
             // 
             // btndelquery
             // 
-            this.btndelquery.Location = new System.Drawing.Point(35, 20);
+            this.btndelquery.Location = new System.Drawing.Point(6, 26);
             this.btndelquery.Name = "btndelquery";
-            this.btndelquery.Size = new System.Drawing.Size(100, 50);
+            this.btndelquery.Size = new System.Drawing.Size(205, 50);
             this.btndelquery.TabIndex = 28;
             this.btndelquery.Text = "Удалить";
             this.btndelquery.UseVisualStyleBackColor = true;
@@ -343,9 +343,9 @@
             // 
             // btnSetDone
             // 
-            this.btnSetDone.Location = new System.Drawing.Point(35, 141);
+            this.btnSetDone.Location = new System.Drawing.Point(6, 138);
             this.btnSetDone.Name = "btnSetDone";
-            this.btnSetDone.Size = new System.Drawing.Size(100, 50);
+            this.btnSetDone.Size = new System.Drawing.Size(205, 50);
             this.btnSetDone.TabIndex = 29;
             this.btnSetDone.Text = "Выполнить";
             this.btnSetDone.UseVisualStyleBackColor = true;
@@ -432,6 +432,98 @@
             this.NEW.TabIndex = 0;
             this.NEW.Text = "Новый";
             this.NEW.UseVisualStyleBackColor = true;
+            // 
+            // txtNumVuNew
+            // 
+            this.txtNumVuNew.Enabled = false;
+            this.txtNumVuNew.Location = new System.Drawing.Point(247, 40);
+            this.txtNumVuNew.Name = "txtNumVuNew";
+            this.txtNumVuNew.Size = new System.Drawing.Size(113, 20);
+            this.txtNumVuNew.TabIndex = 44;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label19.Location = new System.Drawing.Point(11, 41);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(230, 15);
+            this.label19.TabIndex = 43;
+            this.label19.Text = "Номер водительского удостоверения:";
+            // 
+            // txtAddressNew
+            // 
+            this.txtAddressNew.Enabled = false;
+            this.txtAddressNew.Location = new System.Drawing.Point(11, 77);
+            this.txtAddressNew.Multiline = true;
+            this.txtAddressNew.Name = "txtAddressNew";
+            this.txtAddressNew.Size = new System.Drawing.Size(349, 69);
+            this.txtAddressNew.TabIndex = 42;
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label18.Location = new System.Drawing.Point(11, 59);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(101, 15);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "Адрес прописки:";
+            // 
+            // txtPTSNew
+            // 
+            this.txtPTSNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPTSNew.Enabled = false;
+            this.txtPTSNew.Location = new System.Drawing.Point(231, 184);
+            this.txtPTSNew.Name = "txtPTSNew";
+            this.txtPTSNew.Size = new System.Drawing.Size(129, 20);
+            this.txtPTSNew.TabIndex = 40;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label14.Location = new System.Drawing.Point(192, 185);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(34, 15);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "ПТС:";
+            // 
+            // txtEnNumberNew
+            // 
+            this.txtEnNumberNew.Enabled = false;
+            this.txtEnNumberNew.Location = new System.Drawing.Point(127, 210);
+            this.txtEnNumberNew.Name = "txtEnNumberNew";
+            this.txtEnNumberNew.Size = new System.Drawing.Size(233, 20);
+            this.txtEnNumberNew.TabIndex = 38;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.Location = new System.Drawing.Point(11, 211);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 15);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Номер двигателя:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Location = new System.Drawing.Point(9, 184);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 36;
+            this.label1.Text = "Цвет:";
+            // 
+            // txtCOLORNew
+            // 
+            this.txtCOLORNew.Enabled = false;
+            this.txtCOLORNew.Location = new System.Drawing.Point(53, 183);
+            this.txtCOLORNew.Name = "txtCOLORNew";
+            this.txtCOLORNew.Size = new System.Drawing.Size(133, 20);
+            this.txtCOLORNew.TabIndex = 35;
             // 
             // txtPhoneNew
             // 
@@ -575,7 +667,7 @@
             this.EXIST.Location = new System.Drawing.Point(4, 22);
             this.EXIST.Name = "EXIST";
             this.EXIST.Padding = new System.Windows.Forms.Padding(3);
-            this.EXIST.Size = new System.Drawing.Size(657, 392);
+            this.EXIST.Size = new System.Drawing.Size(376, 359);
             this.EXIST.TabIndex = 1;
             this.EXIST.Text = "Существующий";
             this.EXIST.UseVisualStyleBackColor = true;
@@ -708,98 +800,6 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1851, 845);
             this.tabControl1.TabIndex = 1;
-            // 
-            // txtCOLORNew
-            // 
-            this.txtCOLORNew.Enabled = false;
-            this.txtCOLORNew.Location = new System.Drawing.Point(53, 183);
-            this.txtCOLORNew.Name = "txtCOLORNew";
-            this.txtCOLORNew.Size = new System.Drawing.Size(133, 20);
-            this.txtCOLORNew.TabIndex = 35;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(9, 184);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "Цвет:";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(11, 211);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 15);
-            this.label4.TabIndex = 37;
-            this.label4.Text = "Номер двигателя:";
-            // 
-            // txtEnNumberNew
-            // 
-            this.txtEnNumberNew.Enabled = false;
-            this.txtEnNumberNew.Location = new System.Drawing.Point(127, 210);
-            this.txtEnNumberNew.Name = "txtEnNumberNew";
-            this.txtEnNumberNew.Size = new System.Drawing.Size(233, 20);
-            this.txtEnNumberNew.TabIndex = 38;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label14.Location = new System.Drawing.Point(192, 185);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(34, 15);
-            this.label14.TabIndex = 39;
-            this.label14.Text = "ПТС:";
-            // 
-            // txtPTSNew
-            // 
-            this.txtPTSNew.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPTSNew.Enabled = false;
-            this.txtPTSNew.Location = new System.Drawing.Point(231, 184);
-            this.txtPTSNew.Name = "txtPTSNew";
-            this.txtPTSNew.Size = new System.Drawing.Size(129, 20);
-            this.txtPTSNew.TabIndex = 40;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label18.Location = new System.Drawing.Point(11, 59);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(101, 15);
-            this.label18.TabIndex = 41;
-            this.label18.Text = "Адрес прописки:";
-            // 
-            // txtAddressNew
-            // 
-            this.txtAddressNew.Enabled = false;
-            this.txtAddressNew.Location = new System.Drawing.Point(11, 77);
-            this.txtAddressNew.Multiline = true;
-            this.txtAddressNew.Name = "txtAddressNew";
-            this.txtAddressNew.Size = new System.Drawing.Size(349, 69);
-            this.txtAddressNew.TabIndex = 42;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(11, 41);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(230, 15);
-            this.label19.TabIndex = 43;
-            this.label19.Text = "Номер водительского удостоверения:";
-            // 
-            // txtNumVuNew
-            // 
-            this.txtNumVuNew.Enabled = false;
-            this.txtNumVuNew.Location = new System.Drawing.Point(247, 40);
-            this.txtNumVuNew.Name = "txtNumVuNew";
-            this.txtNumVuNew.Size = new System.Drawing.Size(113, 20);
-            this.txtNumVuNew.TabIndex = 44;
             // 
             // QueryForm
             // 

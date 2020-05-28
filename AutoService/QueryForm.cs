@@ -434,7 +434,7 @@ namespace AutoService
                     dtgListService.DataSource = result;
 
                     dtgListService.Columns[0].Visible = false;
-                    dtgListService.Columns[1].Width = 200;
+                    dtgListService.Columns[1].Width = 500;
                     dtgListService.Columns[3].Visible = false;
                     dtgListService.Columns[2].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
                     decimal sum = 0;

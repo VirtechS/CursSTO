@@ -91,7 +91,7 @@
             this.groupNewCar.Controls.Add(this.txtGRS);
             this.groupNewCar.Controls.Add(this.label2);
             this.groupNewCar.Controls.Add(this.btnExistClient);
-            this.groupNewCar.Location = new System.Drawing.Point(356, 435);
+            this.groupNewCar.Location = new System.Drawing.Point(957, 440);
             this.groupNewCar.Name = "groupNewCar";
             this.groupNewCar.Size = new System.Drawing.Size(269, 185);
             this.groupNewCar.TabIndex = 28;
@@ -147,7 +147,7 @@
             // 
             // btnaddOldCar
             // 
-            this.btnaddOldCar.Location = new System.Drawing.Point(362, 626);
+            this.btnaddOldCar.Location = new System.Drawing.Point(963, 631);
             this.btnaddOldCar.Name = "btnaddOldCar";
             this.btnaddOldCar.Size = new System.Drawing.Size(254, 23);
             this.btnaddOldCar.TabIndex = 30;
@@ -159,7 +159,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(353, 419);
+            this.label3.Location = new System.Drawing.Point(954, 424);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(149, 18);
             this.label3.TabIndex = 27;
@@ -167,7 +167,7 @@
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(394, 135);
+            this.txtPhone.Location = new System.Drawing.Point(281, 120);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(198, 20);
             this.txtPhone.TabIndex = 104;
@@ -204,7 +204,7 @@
             // 
             // dtpDateBirthday
             // 
-            this.dtpDateBirthday.Location = new System.Drawing.Point(394, 109);
+            this.dtpDateBirthday.Location = new System.Drawing.Point(281, 94);
             this.dtpDateBirthday.Name = "dtpDateBirthday";
             this.dtpDateBirthday.Size = new System.Drawing.Size(198, 20);
             this.dtpDateBirthday.TabIndex = 103;
@@ -214,7 +214,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(333, 138);
+            this.label5.Location = new System.Drawing.Point(220, 123);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(55, 13);
             this.label5.TabIndex = 36;
@@ -223,7 +223,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(299, 112);
+            this.label4.Location = new System.Drawing.Point(186, 97);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(89, 13);
             this.label4.TabIndex = 35;
@@ -232,7 +232,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(331, 86);
+            this.label6.Location = new System.Drawing.Point(218, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(57, 13);
             this.label6.TabIndex = 34;
@@ -241,7 +241,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(329, 34);
+            this.label7.Location = new System.Drawing.Point(216, 19);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(59, 13);
             this.label7.TabIndex = 33;
@@ -250,7 +250,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(356, 60);
+            this.label8.Location = new System.Drawing.Point(243, 45);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(32, 13);
             this.label8.TabIndex = 32;
@@ -258,7 +258,7 @@
             // 
             // txtPatron
             // 
-            this.txtPatron.Location = new System.Drawing.Point(394, 83);
+            this.txtPatron.Location = new System.Drawing.Point(281, 68);
             this.txtPatron.Name = "txtPatron";
             this.txtPatron.Size = new System.Drawing.Size(198, 20);
             this.txtPatron.TabIndex = 102;
@@ -267,7 +267,7 @@
             // 
             // txtSurname
             // 
-            this.txtSurname.Location = new System.Drawing.Point(394, 31);
+            this.txtSurname.Location = new System.Drawing.Point(281, 16);
             this.txtSurname.Name = "txtSurname";
             this.txtSurname.Size = new System.Drawing.Size(198, 20);
             this.txtSurname.TabIndex = 100;
@@ -276,7 +276,7 @@
             // 
             // txtName
             // 
-            this.txtName.Location = new System.Drawing.Point(394, 57);
+            this.txtName.Location = new System.Drawing.Point(281, 42);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(198, 20);
             this.txtName.TabIndex = 101;
@@ -290,7 +290,7 @@
             this.закрытьToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(647, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(1244, 24);
             this.menuStrip1.TabIndex = 42;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -312,7 +312,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.label9.Location = new System.Drawing.Point(216, 184);
+            this.label9.Location = new System.Drawing.Point(216, 151);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(45, 18);
             this.label9.TabIndex = 44;
@@ -324,7 +324,7 @@
             this.tlsInfoCountCar});
             this.statusStrip1.Location = new System.Drawing.Point(0, 665);
             this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(647, 22);
+            this.statusStrip1.Size = new System.Drawing.Size(1244, 22);
             this.statusStrip1.SizingGrip = false;
             this.statusStrip1.TabIndex = 45;
             this.statusStrip1.Text = "statusStrip1";
@@ -339,11 +339,11 @@
             this.dtgCars.AllowUserToResizeColumns = false;
             this.dtgCars.AllowUserToResizeRows = false;
             this.dtgCars.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgCars.Location = new System.Drawing.Point(209, 205);
+            this.dtgCars.Location = new System.Drawing.Point(209, 172);
             this.dtgCars.MultiSelect = false;
             this.dtgCars.Name = "dtgCars";
             this.dtgCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgCars.Size = new System.Drawing.Size(383, 131);
+            this.dtgCars.Size = new System.Drawing.Size(993, 164);
             this.dtgCars.TabIndex = 46;
             // 
             // groupBox1
@@ -366,7 +366,7 @@
             this.groupBox1.Controls.Add(this.txtName);
             this.groupBox1.Location = new System.Drawing.Point(24, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(601, 358);
+            this.groupBox1.Size = new System.Drawing.Size(1208, 358);
             this.groupBox1.TabIndex = 47;
             this.groupBox1.TabStop = false;
             // 
@@ -399,7 +399,7 @@
             this.dtgAllCars.MultiSelect = false;
             this.dtgAllCars.Name = "dtgAllCars";
             this.dtgAllCars.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgAllCars.Size = new System.Drawing.Size(311, 138);
+            this.dtgAllCars.Size = new System.Drawing.Size(924, 185);
             this.dtgAllCars.TabIndex = 50;
             // 
             // label11
@@ -471,7 +471,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(647, 687);
+            this.ClientSize = new System.Drawing.Size(1244, 687);
             this.Controls.Add(this.btnaddOldCar);
             this.Controls.Add(this.dtgAllCars);
             this.Controls.Add(this.label11);

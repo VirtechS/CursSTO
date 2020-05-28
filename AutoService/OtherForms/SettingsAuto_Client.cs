@@ -59,6 +59,9 @@ namespace AutoService.OtherForms
             RefreshDataGrid();
             txtGRS.Text = Auto_Client.GRS;
             txtModel.Text = Auto_Client.Model;
+            txtColor.Text = Auto_Client.PTS;
+            txtEnNumber.Text = Auto_Client.EnNumber;
+            txtPTS.Text = Auto_Client.PTS;
         }
 
         // Формирование склонения слова 

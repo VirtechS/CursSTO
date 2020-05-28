@@ -28,6 +28,12 @@ namespace AutoService.Forms
                 dtgCars.Columns["NameCar"].Width = 100;
                 dtgCars.Columns["RegisterSign"].HeaderText = "ГРЗ";
                 dtgCars.Columns["RegisterSign"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+                dtgCars.Columns["ColorCar"].HeaderText = "Цвет";
+                dtgCars.Columns["ColorCar"].Width = 100;
+                dtgCars.Columns["EnNumberCar"].HeaderText = "Номер двигателя";
+                dtgCars.Columns["EnNumberCar"].Width = 100;
+                dtgCars.Columns["PTSCar"].HeaderText = "Номер тех паспорта";
+                dtgCars.Columns["PTSCar"].Width = 100;
                 dtgfio.DataSource = null;
             }
             catch (Exception)
@@ -82,12 +88,12 @@ namespace AutoService.Forms
         {
             if (dtgCars.SelectedRows.Count != 0 && dtgCars.RowCount != 1)
                 tls.Text = "Найдено " + dtgCars.RowCount.ToString() + " " + GetWordAuto(dtgCars.RowCount) + ". У авто " +
-                    dtgCars.SelectedRows[0].Cells[1].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[2].Value.ToString().Trim() + " " +
+                    dtgCars.SelectedRows[0].Cells[1].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[2].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[3].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[4].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[5].Value.ToString().Trim() + " " +
                     dtgfio.RowCount + "-" + GetWordClient(dtgfio.RowCount);
             else
             {
                 if (dtgCars.RowCount != 0) tls.Text = "Найден " + 1 + GetWordAuto(1) + ". У авто " +
-                   dtgCars.SelectedRows[0].Cells[1].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[2].Value.ToString().Trim() + " " +
+                   dtgCars.SelectedRows[0].Cells[1].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[2].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[3].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[4].Value.ToString().Trim() + " " + dtgCars.SelectedRows[0].Cells[5].Value.ToString().Trim() + " " +
                    dtgfio.RowCount + "-" + GetWordClient(dtgfio.RowCount);
                 else
                     tls.Text = "Найдено " + 0 + GetWordAuto(0);
@@ -115,7 +121,10 @@ namespace AutoService.Forms
                 {
                     CarID = x.car.car.ID,
                     NameCar = x.model.NameCar,
-                    RegisterSign = x.car.car.RegisterSign
+                    RegisterSign = x.car.car.RegisterSign,
+                    ColorCar = x.car.car.color,
+                    EnNumberCar = x.car.car.EnNumber,
+                    PTSCar = x.car.car.pts
                 }
                 ).Distinct();
 
@@ -188,9 +197,12 @@ namespace AutoService.Forms
                     {
                         CarID = x.car.car.ID,
                         NameCar = x.model.NameCar,
-                        RegisterSign = x.car.car.RegisterSign
+                        RegisterSign = x.car.car.RegisterSign,
+                        ColorCar = x.car.car.color,
+                        EnNumberCar = x.car.car.EnNumber,
+                        PTSCar = x.car.car.pts
                     }
-                    ).Where(x => x.NameCar.Contains(name) || x.RegisterSign.Contains(name)).Distinct();
+                    ).Where(x => x.NameCar.Contains(name) || x.RegisterSign.Contains(name) || x.ColorCar.Contains(name) || x.EnNumberCar.Contains(name) || x.PTSCar.Contains(name)).Distinct();
                     dtgCars.DataSource = result.ToList();
                     if (dtgCars.RowCount == 0)
                         dtgfio.DataSource = null;
@@ -238,6 +250,9 @@ namespace AutoService.Forms
                 Auto_Client.CarID = Convert.ToInt32(dtgCars.Rows[i_row].Cells[0].Value);
                 Auto_Client.Model = dtgCars.Rows[i_row].Cells[1].Value.ToString();
                 Auto_Client.GRS = dtgCars.Rows[i_row].Cells[2].Value.ToString();
+                Auto_Client.COLOR = dtgCars.Rows[i_row].Cells[3].Value.ToString();
+                Auto_Client.EnNumber = dtgCars.Rows[i_row].Cells[4].Value.ToString();
+                Auto_Client.PTS = dtgCars.Rows[i_row].Cells[5].Value.ToString();
 
                 using (SettingsAuto_Client autoclient = new SettingsAuto_Client())
                 {
