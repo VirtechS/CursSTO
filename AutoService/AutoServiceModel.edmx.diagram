@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="67e18258459c4a75a984ce406ae7be62" Name="Diagram1" ZoomLevel="113">
+        <EntityTypeShape EntityType="AutoServiceModel.Admin" Width="1.5" PointX="0.5" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Cars" Width="1.5" PointX="3" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Clients" Width="1.5" PointX="5.875" PointY="0.625" IsExpanded="true" FillColor="0, 122, 204" />
+        <EntityTypeShape EntityType="AutoServiceModel.Masters" Width="1.5" PointX="5.75" PointY="4.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.ModelCars" Width="1.5" PointX="0.5" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.QueryAutoService" Width="1.5" PointX="9.25" PointY="0.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Services" Width="1.5" PointX="9.25" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.Status" Width="1.5" PointX="3.125" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="AutoServiceModel.sysdiagrams" Width="1.5" PointX="12.125" PointY="11.625" IsExpanded="true" />
+        <AssociationConnector Association="AutoServiceModel.FK_Cars_ModelCars2" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoServiceModel.FK_Clients_Cars1" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoServiceModel.FK_QueryAutoService_Clients1" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoServiceModel.FK_QueryAutoService_Masters" ManuallyRouted="false" >
+        </AssociationConnector>
+        <AssociationConnector Association="AutoServiceModel.FK_QueryAutoService_Services" ManuallyRouted="false" />
+        <AssociationConnector Association="AutoServiceModel.FK_Admin_Status" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
